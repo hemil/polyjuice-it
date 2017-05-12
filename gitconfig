@@ -1,0 +1,28 @@
+[alias]
+    logg = log --pretty=format:'%h %an->%s' --graph
+    camd = commit -a --amend -m
+    log1 = log --graph --all --format=format:'%C(bold red)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+    log2 = log --graph --all --format=format:'%C(bold red)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)- %an%C(reset)' --abbrev-commit
+    log3 = log --graph --all --oneline --decorate
+    stat = !git status && git log1 && git remote show origin
+[color]
+    ui = true
+[merge]
+    tool = bc3
+[diff]
+    tool = bc3
+[difftool "bc3"]
+    path = C:/Program Files (x86)/Beyond Compare 3/bcomp.exe
+[mergetool "bc3"]
+    path = C:/Program Files (x86)/Beyond Compare 3/bcomp.exe
+    trustExitCode = true
+[core]
+	excludesfile = /Users/hemil/.gitignore_global
+[help]
+    autocorrect = 1
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
